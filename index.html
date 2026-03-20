@@ -116,80 +116,86 @@ body.dark .shell-card{background:#0d1117}
 </style>
 
 
-<style id="final-ui-theme">
-/* ===== GLOBAL ===== */
-body {
-  font-family: 'Segoe UI', sans-serif !important;
+<style id="option-b-theme">
+:root{
+  --bg:#FFF7ED;
+  --card:#FFFFFF;
+  --text:#1F2937;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+  --primary:#60A5FA;
+  --accent:#F472B6;
 }
 
-/* ===== ADULT MODE ===== */
-body.adult-mode {
-  background: #0F172A !important;
-  color: #F9FAFB !important;
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Segoe UI','Comic Sans MS',sans-serif !important;
 }
 
-body.adult-mode .header,
-body.adult-mode .top-card {
-  background: linear-gradient(135deg, #1E293B, #334155) !important;
-  border-radius: 20px;
-}
-
-body.adult-mode .card,
-body.adult-mode .lang-card {
-  background: #111827 !important;
-  border: 1px solid #374151 !important;
-  border-radius: 16px;
-}
-
-body.adult-mode button {
-  background: linear-gradient(45deg, #3B82F6, #06B6D4) !important;
-  color: white !important;
-}
-
-/* ===== KIDS MODE ===== */
-body.kids-mode {
+/* Header / top areas */
+.header, .top, .top-card{
   background: #FFF7ED !important;
-  color: #1F2937 !important;
 }
 
-body.kids-mode .header,
-body.kids-mode .top-card {
-  background: linear-gradient(135deg, #FDE68A, #FCA5A5) !important;
-  border-radius: 20px;
+/* Cards */
+.card, .lang-card, #card{
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important;
 }
 
-body.kids-mode .card,
-body.kids-mode .lang-card {
-  background: #FFFFFF !important;
-  border: 2px solid #FCD34D !important;
-  border-radius: 16px;
+/* Text */
+h1,h2,h3,p,span,div{
+  color: var(--text) !important;
 }
 
-body.kids-mode button {
-  background: linear-gradient(45deg, #34D399, #60A5FA) !important;
-  color: white !important;
-}
-
-/* ===== COMMON IMPROVEMENTS ===== */
-button {
-  border-radius: 20px !important;
+/* Buttons */
+button{
+  background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
+  color: #ffffff !important;
+  border-radius: 18px !important;
   padding: 12px 16px !important;
-  font-weight: 600;
+  border: none !important;
+  font-weight: 600 !important;
+}
+button:active{ transform: scale(0.98); }
+
+/* Options / items */
+.option{
+  background: #FFFFFF !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+}
+.option:hover{
+  background: #FDF2F8 !important;
 }
 
-.card, .lang-card {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15) !important;
-  margin: 10px;
-  padding: 15px;
+/* Inputs (login) */
+input{
+  background:#FFFFFF !important;
+  border:1px solid var(--border) !important;
+  border-radius:12px !important;
+  padding:10px 12px !important;
+  color:var(--text) !important;
+  outline:none;
+}
+input:focus{
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
 }
 
-.option:hover {
-  transform: scale(1.03);
+/* Small helpers */
+.example{
+  background:#FFF7ED !important;
+  border-radius:12px !important;
+  padding:10px !important;
 }
 
-/* ===== FIX TEXT VISIBILITY ===== */
-h1, h2, h3, p, span {
-  color: inherit !important;
+/* Ensure no conflicting heavy gradients remain */
+body, .card, .lang-card, .header, .top, .top-card{
+  background-image: none !important;
 }
 </style>
 
