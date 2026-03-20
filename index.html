@@ -116,26 +116,31 @@ body.dark .shell-card{background:#0d1117}
 </style>
 
 
-<style id="option-b-theme">
+<style id="vibrant-theme">
 :root{
-  --bg:#FFF7ED;
+  --bg:#F8FAFC;
   --card:#FFFFFF;
-  --text:#1F2937;
+  --text:#111827;
   --muted:#6B7280;
   --border:#E5E7EB;
-  --primary:#60A5FA;
-  --accent:#F472B6;
+  --header1:#6366F1;
+  --header2:#3B82F6;
+  --btn1:#22C55E;
+  --btn2:#3B82F6;
 }
 
+/* Base */
 body{
   background: var(--bg) !important;
   color: var(--text) !important;
-  font-family: 'Segoe UI','Comic Sans MS',sans-serif !important;
+  font-family: 'Segoe UI', Arial, sans-serif !important;
 }
 
-/* Header / top areas */
+/* Header / Top areas */
 .header, .top, .top-card{
-  background: #FFF7ED !important;
+  background: linear-gradient(135deg, var(--header1), var(--header2)) !important;
+  color: #FFFFFF !important;
+  border-radius: 18px !important;
 }
 
 /* Cards */
@@ -143,7 +148,7 @@ body{
   background: var(--card) !important;
   border: 1px solid var(--border) !important;
   border-radius: 16px !important;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
 }
 
 /* Text */
@@ -153,47 +158,49 @@ h1,h2,h3,p,span,div{
 
 /* Buttons */
 button{
-  background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
+  background: linear-gradient(45deg, var(--btn1), var(--btn2)) !important;
   color: #ffffff !important;
   border-radius: 18px !important;
   padding: 12px 16px !important;
   border: none !important;
   font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(34,197,94,0.3);
 }
-button:active{ transform: scale(0.98); }
+button:hover{
+  transform: translateY(-1px);
+}
 
-/* Options / items */
+/* Options */
 .option{
   background: #FFFFFF !important;
   border: 1px solid var(--border) !important;
   border-radius: 12px !important;
 }
 .option:hover{
-  background: #FDF2F8 !important;
+  background: #EFF6FF !important;
 }
 
-/* Inputs (login) */
+/* Inputs */
 input{
   background:#FFFFFF !important;
   border:1px solid var(--border) !important;
   border-radius:12px !important;
   padding:10px 12px !important;
   color:var(--text) !important;
-  outline:none;
 }
 input:focus{
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
+  border-color: var(--header2) !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
 }
 
-/* Small helpers */
+/* Example blocks */
 .example{
-  background:#FFF7ED !important;
+  background:#F1F5F9 !important;
   border-radius:12px !important;
   padding:10px !important;
 }
 
-/* Ensure no conflicting heavy gradients remain */
+/* Remove heavy backgrounds if any */
 body, .card, .lang-card, .header, .top, .top-card{
   background-image: none !important;
 }
